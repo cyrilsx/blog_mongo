@@ -1,0 +1,38 @@
+buildscript {
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.3.6.RELEASE")
+    }
+    repositories {
+        mavenCentral()
+    }
+}
+
+apply plugin: 'war'
+apply plugin: 'idea'
+apply plugin: 'java'
+
+group 'org.nexu.bloging'
+version '1.0-SNAPSHOT'
+
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    testCompile 'org.springframework.boot:spring-boot-starter-test:1.3.3.RELEASE'
+    testCompile group: 'de.flapdoodle.embed', name: 'de.flapdoodle.embed.mongo', version: '1.50.5'
+
+    compile 'org.springframework.boot:spring-boot-starter-web:1.3.3.RELEASE'
+    compile 'org.mongodb:mongodb-driver-reactivestreams:1.0.0'
+}
+
+apply plugin: 'spring-boot'

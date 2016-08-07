@@ -1,0 +1,8 @@
+<h3>Top Post</h3>
+<div class="grid grid-pad">
+    <div *ngFor="let post of posts" (click)="gotoDetail(post)" class="col-1-4">
+        <div class="module post">
+            <h4>{{post.title}}</h4>
+        </div>
+    </div>
+</div>

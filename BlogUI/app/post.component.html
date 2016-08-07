@@ -1,0 +1,16 @@
+<h1>{{title}}</h1>
+
+
+<ul class='posts'>
+    <li *ngFor="let post of posts" [class.selected]="hero === selectedHero" (click)="onSelect(post)">
+        <span class="badge">{{post.id}}</span> {{post.title}}
+    </li>
+</ul>
+<my-post-detail [post]="selectedPost"></my-post-detail>
+
+<div *ngIf="selectedPost">
+    <h2>
+        {{selectedPost.title | uppercase}} is selected
+    </h2>
+    <button (click)="gotoDetail()">View Details</button>
+</div>

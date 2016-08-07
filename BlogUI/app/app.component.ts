@@ -1,13 +1,18 @@
 import { Component } from '@angular/core';
+
+import { PostService } from './post.service';
+import { PostComponent } from './post.component';
+import { ROUTER_DIRECTIVES } from '@angular/router';
+
 @Component({
-    selector: 'my-family-app',
-    template: `
-        <h1>{{title}}</h1>
-
-
-    `
+    selector: 'my-app',
+    templateUrl: 'app/app.component.html',
+    styleUrls: ['app/app.component.css'],
+    directives: [ROUTER_DIRECTIVES],
+    providers: [
+        PostService
+    ]
 })
 export class AppComponent {
-    title = 'FamilyBoom';
-
+    title = 'Tour of Heroes';
 }
